@@ -1,74 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-    <LinearLayout
+    <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:background="@color/screenBackgroundColor"
         android:gravity="center"
-        android:padding="24dp"
-        android:background="@color/screenBackgroundColor">
+        android:orientation="vertical"
+        android:padding="24dp">
 
         <!-- Заголовок -->
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tvLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:gravity="center"
             android:text="Log in"
             android:textColor="@color/green"
             android:textSize="32sp"
-            android:layout_marginBottom="32dp"
-            android:textStyle="bold"
-            android:gravity="center"/>
+            android:textStyle="bold" />
 
         <!-- Квадрат с полями ввода -->
-        <LinearLayout
+        <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
+            android:layout_marginBottom="24dp"
             android:background="@drawable/rectangle_border"
-            android:layout_marginBottom="24dp">
+            android:orientation="vertical"
+            android:padding="16dp">
 
             <!-- Поле для Email -->
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/etEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:background="@android:color/white"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:padding="12dp"
-                android:background="@android:color/white"
                 android:textColor="#000000"
-                android:textColorHint="#8A8A8A"
-                android:layout_marginBottom="16dp"/>
+                android:textColorHint="#8A8A8A" />
 
             <!-- Поле для Пароля -->
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/etPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@android:color/white"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="12dp"
-                android:background="@android:color/white"
                 android:textColor="#000000"
-                android:textColorHint="#8A8A8A"/>
-        </LinearLayout>
+                android:textColorHint="#8A8A8A" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
 
         <!-- Кнопка входа -->
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Log in"
-            android:textColor="@android:color/white"
             android:backgroundTint="@color/green"
             android:padding="12dp"
-            android:textSize="18sp"/>
-    </LinearLayout>
-</ScrollView>
+            android:text="Log in"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>
