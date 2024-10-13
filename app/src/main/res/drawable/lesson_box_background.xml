@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid android:color="#FFFFFF" /> <!-- Цвет фона (белый) -->
+    <stroke
+        android:width="3dp"
+        android:color="@color/green" /> <!-- Цвет контура (темно-зеленый) -->
+    <corners android:radius="4dp"/> <!-- Скругление углов (по желанию) -->
+</shape>

@@ -1,0 +1,36 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Цвет статус-бара -->
+        <item name="android:statusBarColor">@color/screenBackgroundColor</item>
+        <!-- Активируем темные значки для светлого статус-бара -->
+        <item name="android:windowLightStatusBar">true</item>
+        <!-- Цвет навигационного бара -->
+        <item name="android:navigationBarColor">@color/screenBackgroundColor</item>
+    </style>
+
+    <!-- Стиль для квадрата с уроками -->
+    <style name="LessonBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/lesson_box_background</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:layout_marginBottom">16dp</item>
+    </style>
+
+    <!-- Стиль для текста уроков -->
+    <style name="LessonText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item> <!-- Увеличение размера текста -->
+        <item name="android:textStyle">bold</item> <!-- Жирный шрифт -->
+        <item name="android:layout_marginBottom">8dp</item> <!-- Увеличенный отступ снизу -->
+        <item name="android:shadowColor">@android:color/darker_gray</item> <!-- Цвет тени -->
+        <item name="android:shadowRadius">1.5</item> <!-- Радиус тени -->
+        <item name="android:shadowDx">0</item> <!-- Смещение тени по X -->
+        <item name="android:shadowDy">1</item> <!-- Смещение тени по Y -->
+    </style>
+
+</resources>
