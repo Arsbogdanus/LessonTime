@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "44475789439",
+    "project_id": "lessontime-3dedf",
+    "storage_bucket": "lessontime-3dedf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:44475789439:android:05b5c5a3333416aceecf4a",
+        "android_client_info": {
+          "package_name": "com.brz.lessontime"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAKRpkw93MiHT35Q6DeIOf1A6VdX7ZEM_M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
