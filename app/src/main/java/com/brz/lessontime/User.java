@@ -3,10 +3,10 @@ package com.brz.lessontime;
 import com.google.gson.annotations.SerializedName;
 
 public class User {
-    @SerializedName("email")
+    @SerializedName("Email Address [Required]")
     private String email;
 
-    @SerializedName("password")
+    @SerializedName("Password [Required]")
     private String password;
 
     // Конструкторы, геттеры и сеттеры

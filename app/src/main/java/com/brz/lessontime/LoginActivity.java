@@ -1,9 +1,11 @@
 package com.brz.lessontime;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -44,8 +46,8 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         // Инициализация объектов
-        emailEditText = findViewById(R.id.etEmail); // ID для вашего поля ввода email
-        passwordEditText = findViewById(R.id.etPassword); // ID для вашего поля ввода пароля
+        emailEditText = findViewById(R.id.etEmail); // ID для поля email
+        passwordEditText = findViewById(R.id.etPassword); // ID для поля пароля
         Button loginButton = findViewById(R.id.loginButton); // ID для кнопки входа
 
         // Инициализация объекта Gson
@@ -61,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (!isValidEmail(email)) {
                     Toast.makeText(LoginActivity.this, "Введите корректный email", Toast.LENGTH_SHORT).show();
-                    return; // Если email некорректен, выходим из метода
+                    return;
                 }
 
                 // Проверка учетных данных
@@ -71,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                     // Переход к MainActivity
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
-                    finish(); // Закрываем LoginActivity
+                    finish();
                 } else {
                     // Неверные учетные данные
                     Toast.makeText(LoginActivity.this, "Неверные email или пароль", Toast.LENGTH_SHORT).show();
@@ -81,38 +83,38 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private boolean checkUserCredentials(String email, String password) {
-        try {
-            // Чтение JSON файла из assets
-            InputStream inputStream = getAssets().open("school.json");
-            InputStreamReader reader = new InputStreamReader(inputStream);
+        try (InputStream inputStream = getAssets().open("school.json");
+             InputStreamReader reader = new InputStreamReader(inputStream)) {
 
-            // Определяем тип данных
-            Type userListType = new TypeToken<List<User>>() {}.getType();
+            // Создаем тип для корневого JSON-объекта, который содержит массив users
+            Type dataType = new TypeToken<SchoolData>() {}.getType();
 
-            // Преобразуем JSON в список пользователей
-            List<User> users = gson.fromJson(reader, userListType);
+            // Десериализуем JSON-файл
+            SchoolData data = gson.fromJson(reader, dataType);
 
-            // Закрываем InputStream
-            inputStream.close();
+            if (data == null || data.users == null) {
+                Toast.makeText(this, "Данные не найдены", Toast.LENGTH_SHORT).show();
+                return false;
+            }
 
-            // Проверка учетных данных
-            for (User user : users) {
+            // Проверяем учетные данные
+            for (User user : data.users) {
                 if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
-                    return true; // Учетные данные верны
+                    return true;
                 }
             }
         } catch (Exception e) {
             e.printStackTrace();
+            Toast.makeText(this, "Ошибка при загрузке данных", Toast.LENGTH_SHORT).show();
         }
-
-        return false; // Учетные данные неверны
+        return false;
     }
 
     private boolean isValidEmail(String email) {
-        // Регулярное выражение для проверки формата электронной почты
-        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+        // Обновленный шаблон, который поддерживает домены с несколькими уровнями
+        String emailPattern = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
         Pattern pattern = Pattern.compile(emailPattern);
         Matcher matcher = pattern.matcher(email);
-        return matcher.matches(); // Возвращает true, если email соответствует паттерну
+        return matcher.matches();
     }
 }
