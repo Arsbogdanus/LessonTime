@@ -9,12 +9,17 @@ public class User {
     @SerializedName("Password [Required]")
     private String password;
 
-    // Конструкторы, геттеры и сеттеры
-    public User() {}
+    @SerializedName("Org Unit Path [Required]")
+    private String schoolClass;
 
-    public User(String email, String password) {
+    // Конструкторы, геттеры и сеттеры
+    public User() {
+    }
+
+    public User(String email, String password, String schoolClass) {
         this.email = email;
         this.password = password;
+        this.schoolClass = schoolClass;
     }
 
     public String getEmail() {
@@ -23,6 +28,10 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getSchoolClass(){
+        return schoolClass.replace("/Ученики/", "");
     }
 }
 
