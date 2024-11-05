@@ -1,10 +1,16 @@
 package com.brz.lessontime;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
@@ -12,6 +18,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.brz.lessontime.data.SchoolData;
+import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -60,6 +68,17 @@ public class LoginActivity extends AppCompatActivity {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
 
+                FirebaseMessaging.getInstance().getToken()
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            String token = task.getResult();
+                            Log.d("FCM", "Token: " + token);
+                            // Отправьте токен на сервер или используйте его для других целей
+                        } else {
+                            Log.w("FCM", "Fetching FCM registration token failed", task.getException());
+                        }
+                    });
+
                 if (!isValidEmail(email)) {
                     Toast.makeText(LoginActivity.this, "Введите корректный email", Toast.LENGTH_SHORT).show();
                     return;
@@ -86,7 +105,8 @@ public class LoginActivity extends AppCompatActivity {
              InputStreamReader reader = new InputStreamReader(inputStream)) {
 
             // Создаем тип для корневого JSON-объекта, который содержит массив users
-            Type dataType = new TypeToken<SchoolData>() {}.getType();
+            Type dataType = new TypeToken<SchoolData>() {
+            }.getType();
 
             // Десериализуем JSON-файл
             SchoolData data = gson.fromJson(reader, dataType);

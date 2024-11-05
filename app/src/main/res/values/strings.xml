@@ -12,4 +12,8 @@
     <string name="sunday">Sunday</string>
     <string name="Log_in">Log in</string>
     <string name="log_in">Log in</string>
+
+    <string name="APP_name" translatable="false">Push Notifications</string>
+    <string name="notifications_enabled" translatable="false">Push notifications are enabled</string>
+    <string name="notifications_disabled" translatable="false">Push notifications are disabled</string>
 </resources>

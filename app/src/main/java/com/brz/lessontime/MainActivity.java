@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 
 import com.brz.lessontime.databinding.ActivityMainBinding;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -20,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         initUi();
         initListeners();
-
 
         // Установка цвета статус-бара
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
