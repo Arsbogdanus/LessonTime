@@ -12,4 +12,8 @@
     <string name="sunday">Неділя</string>
     <string name="Log_in">Вхід</string>
     <string name="log_in">Увійти</string>
+    <string name="login_successful">Вхід успішний</string>
+    <string name="incorrect_login_or_password">Невірний логін або пароль</string>
+    <string name="fields_cannot_be_empty">Поля не можуть бути порожніми</string>
+    <string name="database_connection_error">Помилка підключення до бази даних</string>
 </resources>
