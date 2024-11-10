@@ -139,8 +139,9 @@ public class MainActivity extends AppCompatActivity {
             TextView lessonTextView = dayBinding.getRoot().findViewById(lessonTextViewId);
 
             // Устанавливаем текст урока в TextView
+            if (lessonTextView != null) {
                 lessonTextView.setText(lessons.get(i));
-
+            }
         }
     }
 }
