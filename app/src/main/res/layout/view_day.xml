@@ -23,40 +23,49 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lessonText1"
             style="@style/LessonText"
-            android:text="@string/lesson" />
+            android:text="" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lessonText2"
             style="@style/LessonText"
-            android:text="@string/lesson" />
+            android:text="" />
 
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lessonText3"
             style="@style/LessonText"
-            android:text="@string/lesson" />
+            android:text="" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lessonText4"
             style="@style/LessonText"
-            android:text="@string/lesson" />
+            android:text="" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lessonText5"
             style="@style/LessonText"
-            android:text="@string/lesson" />
+            android:text="" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lessonText6"
             style="@style/LessonText"
-            android:text="@string/lesson" />
+            android:text="" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lessonText7"
             style="@style/LessonText"
-            android:text="@string/lesson" />
+            android:text="" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lessonText8"
             style="@style/LessonText"
-            android:text="@string/lesson" />
+            android:text="" />
 
         <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/lessonText9"
             style="@style/LessonText"
-            android:text="@string/lesson" />
+            android:text="" />
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.appcompat.widget.LinearLayoutCompat>
