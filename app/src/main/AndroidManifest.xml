@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Разрешения для интернета и сети -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.VIBRATE" />
@@ -17,6 +18,7 @@
         android:theme="@style/Theme.LessonTime"
         tools:targetApi="31">
 
+        <!-- Главная активность -->
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -26,17 +28,23 @@
             </intent-filter>
         </activity>
 
+        <!-- Основная активность -->
         <activity
             android:name=".MainActivity"
-            android:exported="true" /> <!-- Добавляем MainActivity -->
+            android:exported="true" />
 
-
+        <!-- Сервис для получения сообщений Firebase -->
         <service android:name=".MyFirebaseMessagingService"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
+
+        <!-- Метаданные для уведомлений Firebase (если нужно) -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_notification" />
 
     </application>
 
