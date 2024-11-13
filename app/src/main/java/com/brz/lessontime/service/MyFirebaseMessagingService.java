@@ -1,4 +1,4 @@
-package com.brz.lessontime;
+package com.brz.lessontime.service;
 
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.util.Log;
 import androidx.core.app.NotificationCompat;
 
+import com.brz.lessontime.R;
+import com.brz.lessontime.presentation.activity.MainActivity;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 

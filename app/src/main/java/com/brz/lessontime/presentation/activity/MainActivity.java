@@ -1,4 +1,4 @@
-package com.brz.lessontime;
+package com.brz.lessontime.presentation.activity;
 
 import android.content.Intent;
 import android.os.Build;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.brz.lessontime.R;
 import com.brz.lessontime.databinding.ActivityMainBinding;
 import com.brz.lessontime.databinding.ViewDayBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -20,7 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
