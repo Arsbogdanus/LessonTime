@@ -1,0 +1,56 @@
+{
+  "rooms": {
+    "bedroom1": {
+      "item": [
+        {"name": "TV", "company": "Philips"},
+        {"name": "mouse", "company": "Logitech"},
+        {"name": "column", "company": "Apple"},
+        {"name": "headphones", "company": "HATOR"},
+        {"name": "MackBook", "company": "Apple"}
+      ],
+      "furniture": ["table", "chair", "bed", "cupboard", "nightstand"]
+    },
+    "bedroom2": {
+      "item": [
+        {"name": "stabilizer", "company": "Luxeon"},
+        {"name": "book", "company": "АСТ"},
+        {"name": "copybook", "company": "Shkolyarik"}
+      ],
+      "furniture": ["chair", "bed", "nightstand"]
+    },
+    "kitchen": {
+      "item": [
+        {"name": "MackBook", "company": "Apple"},
+        {"name": "knife", "company": "Victorinox"},
+        {"name": "fork", "company": "Victorinox"},
+        {"name": "microwave", "company": "Samsung"},
+        {"name": "refrigerator", "company": "Samsung"}
+      ],
+      "furniture": ["chair", "table", "shelf"]
+    },
+    "bathroom": {
+      "item": [
+        {"name": "toothbrush", "company": "Colgate"},
+        {"name": "toothpaste", "company": "Colgate"},
+        {"name": "shampoo", "company": "Schwarzkopf"}
+      ],
+      "furniture": ["bath", "sink", "toilet"]
+    },
+    "pantry": {
+      "item": [
+        {"name": "screwdriver", "company": "Xiaomi"},
+        {"name": "axe", "company": "Fiskars"},
+        {"name": "boiler", "company": "Bosch"}
+      ],
+      "furniture": ["hanger"]
+    },
+    "hall": {
+      "item": [
+        {"name": "comb", "company": "Schwarzkopf"},
+        {"name": "key", "company": "Renault"},
+        {"name": "charger", "company": "Xiaomi"}
+      ],
+      "furniture": ["lamp"]
+    }
+  }
+}
