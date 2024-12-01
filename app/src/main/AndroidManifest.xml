@@ -20,7 +20,17 @@
 
         <!-- Главная активность -->
         <activity
-            android:name=".presentation.activity.LoginActivity"
+            android:name=".ui.LoginActivity"
+            android:exported="true"/>
+<!--            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>-->
+
+        <!-- Основная активность -->
+        <activity
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,13 +38,8 @@
             </intent-filter>
         </activity>
 
-        <!-- Основная активность -->
-        <activity
-            android:name=".presentation.activity.MainActivity"
-            android:exported="true" />
-
         <!-- Сервис для получения сообщений Firebase -->
-        <service android:name=".service.MyFirebaseMessagingService"
+        <service android:name=".domain.services.MyFirebaseMessagingService"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
@@ -45,7 +50,5 @@
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
             android:resource="@drawable/ic_notification" />
-
     </application>
-
 </manifest>

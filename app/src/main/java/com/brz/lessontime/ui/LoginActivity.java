@@ -1,6 +1,7 @@
-package com.brz.lessontime.presentation.activity;
+package com.brz.lessontime.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,8 +9,8 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.brz.lessontime.R;
-import com.brz.lessontime.service.UserService;
 import com.brz.lessontime.databinding.LoginActivityBinding;
+import com.brz.lessontime.domain.services.UserService;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -36,6 +37,7 @@ public class LoginActivity extends AppCompatActivity {
 
         // Обработчик нажатия кнопки "Войти"
         binding.loginButton.setOnClickListener(v -> {
+
             String email = binding.etEmail.getText().toString().trim();
             String password = binding.etPassword.getText().toString().trim();
 

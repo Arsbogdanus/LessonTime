@@ -1,6 +1,6 @@
-package com.brz.lessontime.service;
+package com.brz.lessontime.domain.services;
 
-import com.brz.lessontime.presentation.model.User;
+import com.brz.lessontime.domain.models.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;

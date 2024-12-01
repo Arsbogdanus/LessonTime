@@ -1,4 +1,4 @@
-package com.brz.lessontime.presentation.model;
+package com.brz.lessontime.domain.models;
 
 public class User {
     private String email;
